@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '@material-ui/core'
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
           <a href="/">DevHere</a>
         </div>
         <div>
-          <button>Novo Post</button>
+          <Button variant="contained" color="primary">Novo Post</Button>
           <span>img1</span>
           <span>img2</span>
         </div>
