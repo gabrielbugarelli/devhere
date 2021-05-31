@@ -49,7 +49,7 @@ const NavBar = () => {
   return (
     <Paper className={classes.root}>
       <Button variant="outlined" color="secondary" className={classes.button}>
-        Registre-se gratis!
+        Cadastre-se!
       </Button>
 
       <ListSubheader component="div" id="nested-list-subheader">
