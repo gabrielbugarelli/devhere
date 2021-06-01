@@ -9,6 +9,10 @@ import CardActions from '@material-ui/core/CardActions';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar'
+import IconButton from '@material-ui/core/IconButton'
+import FavoriteIcon from '@material-ui/icons/Favorite'
+import BookmarkIcon from '@material-ui/icons/Bookmark'
+import MessageIcon from '@material-ui/icons/Message'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center'
   },
   caption: {
-    marginRight: theme.spacing(0)
+    marginRight: theme.spacing(1)
   },
   message: {
     height: 'auto',
@@ -34,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     padding: 0
+  },
+  favorite: {
+    marginLeft: 'auto'
   }
 }))
 
@@ -72,8 +79,31 @@ const PostCard = ({ post }) => {
           <img src={post.image} alt="image post" className={classes.image} />
         </CardActionArea>
       </CardContent>
-      <CardActions>
-
+      <CardActions disableSpacing>
+        <IconButton aria-label="like">
+          <FavoriteIcon />
+          <Typography
+            style={{ cursor: 'pointer' }}
+            color='textSecondary'
+            variant='body2'
+          >
+            {'10'}
+          </Typography>
+        </IconButton>
+        <IconButton aria-label="comment">
+          <MessageIcon />
+          <Typography
+            className={classes.reactions}
+            style={{ cursor: 'pointer' }}
+            color='textSecondary'
+            variant='body2'
+          >
+            {'30'}
+          </Typography>
+        </IconButton>
+        <IconButton aria-label="favorite" className={classes.favorite}>
+          <BookmarkIcon />
+        </IconButton>
       </CardActions>
     </Card>
   )
