@@ -67,7 +67,6 @@ const PostCard = ({ post }) => {
         }
       />
 
-
       <CardContent className={classes.content}>
         <Typography
           className={classes.message}
