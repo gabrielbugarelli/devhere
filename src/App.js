@@ -1,12 +1,22 @@
 import React from 'react';
-import Home from './pages/Home';
-import { ThemeProvider } from '@material-ui/core/styles'
-import theme from './themes'
+import { ThemeProvider } from '@material-ui/core/styles';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const App = () => {
+import SignIn from './pages/SignIn';
+import Home from './pages/Home';
+import theme from './theme';
+import './mock';
+
+function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="*" element={<h1>404!</h1>} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
