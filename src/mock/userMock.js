@@ -18,7 +18,7 @@ mock.onPost('/api/home/login').reply((config) => {
     id: 1,
     name: 'Gabriel Fonseca',
     username: 'gabrielfonseca',
-    email: 'gabrielfonsecaoficial@gmail.com'
+    email: 'gabrielfonsecaoficial@gmail.com',
   }
 
   return [200, { user }]
