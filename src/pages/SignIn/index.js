@@ -28,7 +28,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1)
   },
   button: {
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
+    height: '6vh'
   },
   form: {
     margin: theme.spacing(2, 4)
