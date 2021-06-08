@@ -10,8 +10,9 @@ import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
-import authService from '../../services/authService';
+import signIn from '../../actions/accountActions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,11 +60,14 @@ function SignIn() {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState();
 
+  const dispatch = useDispatch();
+  const account = useSelector(state => state);
+
   //chamada da API
   async function handleSignIn() {
 
     try {
-      await authService.signIn(email, password);
+      await dispatch(signIn(email, password));
       navigate('/');
 
     } catch (error) {

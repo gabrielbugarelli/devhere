@@ -7,7 +7,6 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 import { Bell } from 'react-feather';
 import Avatar from '@material-ui/core/Avatar';
 
-import authService from '../../../services/authService';
 
 const useStyles = makeStyles({
   appBar: {
@@ -33,7 +32,7 @@ const useStyles = makeStyles({
 
 const Header = () => {
   const classes = useStyles();
-  const user = authService.getUser();
+  const user = null
   console.log(user)
 
   return (
