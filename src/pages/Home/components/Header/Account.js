@@ -27,6 +27,11 @@ function Account() {
     handleClose();
     dispatch(signOut());
 
+    navigate('/')
+  }
+
+  //método de teste
+  const handleSignIn = () => {
     navigate('/sign-in')
   }
 
@@ -69,7 +74,7 @@ function Account() {
             getContentAnchorEl={null}
           >
             <MenuItem>Registrar</MenuItem>
-            <MenuItem>Entrar</MenuItem>
+            <MenuItem onClick={handleSignIn}>Entrar</MenuItem>
           </Menu>
 
       }
